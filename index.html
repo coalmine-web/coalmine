@@ -6,11 +6,12 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">My Portfolio</h1>
+      <h1 class="logo">Your Name</h1>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -22,45 +23,50 @@
     </div>
   </header>
 
-  <section id="home">
-    <div class="container">
-      <h2>Hello, I'm <span class="highlight">Your Name</span></h2>
-      <p>Welcome to my personal website!</p>
+  <section id="home" class="section fade-in">
+    <div class="container center">
+      <h2>Hi, I'm <span class="highlight">Your Name</span></h2>
+      <p>Creative Developer | Web Enthusiast | Problem Solver</p>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="section fade-in">
     <div class="container">
       <h2>Skills</h2>
       <ul class="skills-list">
-        <li>HTML</li>
-        <li>CSS</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
         <li>JavaScript</li>
         <li>React</li>
-        <li>Git</li>
+        <li>Tailwind</li>
+        <li>Git & GitHub</li>
       </ul>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="section fade-in">
     <div class="container">
       <h2>Projects</h2>
-      <div class="project">
-        <h3>Awesome Website</h3>
-        <p>A personal portfolio website built with HTML/CSS/JS.</p>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A modern responsive personal website built with HTML, CSS, and JS.</p>
       </div>
-      <div class="project">
-        <h3>Game App</h3>
-        <p>A fun capybara game made with vanilla JavaScript.</p>
+      <div class="project-card">
+        <h3>Capybara Game</h3>
+        <p>A fun JavaScript-based game featuring the adorable capybara!</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="section fade-in">
     <div class="container">
-      <h2>Contact Me</h2>
+      <h2>Contact</h2>
       <p>Email: your.email@example.com</p>
-      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">yourgithub</a></p>
+      <div class="social-icons">
+        <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </section>
 
