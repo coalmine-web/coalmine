@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoalMine Server - FAQ & Hỗ trợ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #eee;
+    }
+    body {
+      background: linear-gradient(135deg, #0f001a, #2e004e, #1c002a);
+      min-height: 100vh;
+      padding: 20px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(40, 0, 70, 0.85);
+      padding: 12px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px #cc00ff88;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ff33ff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 6px #ff33ffaa;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+      background: #330066;
+      box-shadow: 0 0 20px #00ffffcc;
+    }
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.8rem;
+      color: #00f2ff;
+      text-shadow: 0 0 15px #00f2ff, 0 0 40px #ff00ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    /* FAQ Section */
+    .faq-container {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(30, 0, 50, 0.85);
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px #bb00ffaa;
+      margin-bottom: 40px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #66009955;
+      padding-bottom: 18px;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #ff33ff;
+      cursor: pointer;
+      position: relative;
+      padding-right: 30px;
+      user-select: none;
+      text-shadow: 0 0 6px #ff33ffaa;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.5rem;
+      color: #00ffff;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-question::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      margin-top: 8px;
+      color: #ddd;
+      line-height: 1.5;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+    }
+    /* Support Section */
+    .support-section {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(30, 0, 50, 0.85);
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px #bb00ffaa;
+      margin-bottom: 40px;
+    }
+    .support-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffffbb;
+    }
+    .support-section p {
+      color: #ccc;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .discord-link {
+      color: #ff33ff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #330066;
+      box-shadow: 0 0 25px #ff33ffaa;
+      transition: background-color 0.3s ease;
+    }
+    .discord-link:hover {
+      background: #6600cc;
+      box-shadow: 0 0 40px #ff33ffcc;
+    }
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ff33ff;
+      text-shadow: 0 0 6px #ff33ffaa;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      background: #1c0033;
+      border: 2px solid #660099;
+      border-radius: 12px;
+      color: #eee;
+      padding: 12px 15px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #ff33ff;
+      box-shadow: 0 0 12px #ff33ff88;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      background: #ff33ff;
+      color: #1c0033;
+      font-weight: 700;
+      padding: 14px 0;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 30px #ff33ffcc;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #cc00cc;
+      box-shadow: 0 0 45px #cc00ccdd;
+    }
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 640px) {
+      .faq-container, .support-section {
+        padding: 20px 25px;
+      }
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="server-info.html">Server Info</a>
+    <a href="staff.html">Staff</a>
+    <a href="faq.html" class="active">FAQ & Support</a>
+  </nav>
+
+  <h1>FAQ & Hỗ trợ</h1>
+
+  <section class="faq-container" aria-label="Câu hỏi thường gặp">
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">Làm thế nào để kết nối vào server CoalMine?</div>
+      <div class="faq-answer">
+        Bạn chỉ cần mở Minecraft phiên bản 1.20.1, chọn mục Multiplayer và thêm địa chỉ IP <strong>play.coalmine.vn</strong> vào là có thể vào chơi ngay.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">Server có hỗ trợ mod hay plugin nào không?</div>
+      <div class="faq-answer">
+        Server chạy trên nền Vanilla với một số plugin quản lý. Nếu bạn muốn chơi mod, vui lòng tham khảo mục Hướng dẫn tải mod bên dưới.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">Làm sao để liên hệ với đội ngũ hỗ trợ?</div>
+      <div class="faq-answer">
+        Bạn có thể liên hệ qua Discord hoặc sử dụng form liên hệ bên dưới để gửi thắc mắc.
+      </div>
+    </div>
+  </section>
+
+  <section class="support-section" aria-label="Hỗ trợ và liên hệ">
+    <h2>Hướng dẫn tải mod và kết nối</h2>
+    <p>
+      Nếu bạn muốn chơi với mod, hãy tải Forge hoặc Fabric phù hợp với phiên bản Minecraft 1.20.4.
+      Sau đó, cài đặt mod và kết nối với IP server bình thường.
+    </p>
+    <p>
+      Link tải Forge: <a href="https://files.minecraftforge.net/" target="_blank" rel="noopener" style="color:#ff33ff;">https://files.minecraftforge.net/</a><br/>
+      Link tải Fabric: <a href="https://fabricmc.net/use/" target="_blank" rel="noopener" style="color:#ff33ff;">https://fabricmc.net/use/</a>
+    </p>
+    <a href="https://discord.gg/yourdiscordlink" target="_blank" rel="noopener" class="discord-link" aria-label="Discord Support CoalMine">
+      Tham gia Discord hỗ trợ ngay
+    </a>
+
+    <h2 style="margin-top:40px;">Gửi thắc mắc cho chúng tôi</h2>
+    <form id="contactForm" aria-label="Form liên hệ hỗ trợ">
+      <label for="name">Họ tên</label>
+      <input type="text" id="name" name="name" placeholder="Nhập họ tên của bạn" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required />
+
+      <label for="message">Nội dung</label>
+      <textarea id="message" name="message" placeholder="Nhập nội dung thắc mắc hoặc góp ý" required></textarea>
+
+      <button type="submit">Gửi</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 CoalMine Server. All rights reserved.
+  </footer>
+
+  <script>
+    // Toggle FAQ open/close
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('open');
+      });
+      q.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          q.click();
+        }
+      });
+    });
+
+    // Simple form submit handler (demo only)
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
