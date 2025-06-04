@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoalMine Server - Đội Ngũ Admin & Mod</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #eee;
+    }
+    body {
+      background: linear-gradient(135deg, #0f001a, #2e004e, #1c002a);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px 40px;
+    }
+    /* Navbar */
+    nav {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(40, 0, 70, 0.85);
+      padding: 12px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px #cc00ff88;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ff33ff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 6px #ff33ffaa;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+      background: #330066;
+      box-shadow: 0 0 20px #00ffffcc;
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.8rem;
+      color: #00f2ff;
+      text-shadow: 0 0 15px #00f2ff, 0 0 40px #ff00ff;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .staff-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .staff-card {
+      background: rgba(30, 0, 50, 0.8);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 25px #bb00ff88;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .staff-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 40px #ff00ffcc, 0 0 60px #ff33ffcc;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #cc00ff;
+      margin: 0 auto 15px auto;
+      box-shadow: 0 0 15px #ff00ffaa;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .staff-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ff00ff;
+      margin-bottom: 6px;
+      text-shadow: 0 0 8px #ff33ff;
+    }
+    .staff-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #00ffff;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 6px #00ffffaa;
+    }
+    .staff-desc {
+      font-size: 0.95rem;
+      color: #ddd;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      min-height: 70px;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .contact a {
+      color: #ff33ff;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: color 0.3s ease;
+    }
+    .contact a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
+    /* Discord icon from SVG inline */
+    .contact a svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 400px) {
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="server-info.html">Server Info</a>
+    <a href="staff.html" class="active">Staff</a>
+    <a href="faq.html">FAQ & Support</a>
+  </nav>
+
+  <h1>Đội Ngũ Admin & Helper</h1>
+  <div class="staff-container">
+
+    <div class="staff-card">
+      <div class="avatar" style="background-image: url('https://minotar.net/avatar/Steve/120')"></div>
+      <div class="staff-name">KinooVN</div>
+      <div class="staff-role">Admin</div>
+      <div class="staff-desc">
+        Người sáng lập server CoalMine, luôn tận tâm giữ server ổn định và thân thiện với người chơi.
+      </div>
+      <div class="contact">
+        <a href="https://discord.gg/gdcBT5C3R3" target="_blank" title="Discord KinooVN" aria-label="Discord KinooVN">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.3698A19.7913 19.7913 0 0016.066 3c-.237 0-.467.012-.69.035a13.1832 13.1832 0 00-.622 1.301 18.3642 18.3642 0 00-5.497 0 13.1359 13.1359 0 00-.625-1.3 12.7355 12.7355 0 00-.69-.036 19.7798 19.7798 0 00-4.252 1.371C2.27 9.012 1.396 13.47 1.848 17.88a19.9543 19.9543 0 005.946 2.92 14.1952 14.1952 0 004.234-.015 14.0775 14.0775 0 004.214.015 19.9068 19.9068 0 005.948-2.92c.682-4.4-.48-8.849-3.883-13.595zm-11.8 8.32c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.154-2.419 1.2 0 2.17 1.086 2.153 2.419 0 1.333-.955 2.419-2.154 2.419zm7.588 0c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.153-2.419 1.2 0 2.17 1.086 2.154 2.419 0 1.333-.954 2.419-2.154 2.419z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="staff-card">
+      <div class="avatar" style="background-image: url('https://minotar.net/avatar/Alice/120')"></div>
+      <div class="staff-name">Hnamm</div>
+      <div class="staff-role">Helper</div>
+      <div class="staff-desc">
+        Giám sát hoạt động trong server, hỗ trợ người chơi và xử lý các vấn đề nhanh chóng.
+      </div>
+      <div class="contact">
+        <a href="https://discord.gg/gdcBT5C3R3" target="_blank" title="Discord Hnamm" aria-label="Discord Hnamm">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.3698A19.7913 19.7913 0 0016.066 3c-.237 0-.467.012-.69.035a13.1832 13.1832 0 00-.622 1.301 18.3642 18.3642 0 00-5.497 0 13.1359 13.1359 0 00-.625-1.3 12.7355 12.7355 0 00-.69-.036 19.7798 19.7798 0 00-4.252 1.371C2.27 9.012 1.396 13.47 1.848 17.88a19.9543 19.9543 0 005.946 2.92 14.1952 14.1952 0 004.234-.015 14.0775 14.0775 0 004.214.015 19.9068 19.9068 0 005.948-2.92c.682-4.4-.48-8.849-3.883-13.595zm-11.8 8.32c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.154-2.419 1.2 0 2.17 1.086 2.153 2.419 0 1.333-.955 2.419-2.154 2.419zm7.588 0c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.153-2.419 1.2 0 2.17 1.086 2.154 2.419 0 1.333-.954 2.419-2.154 2.419z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="staff-card">
+      <div class="avatar" style="background-image: url('https://minotar.net/avatar/Bob/120')"></div>
+      <div class="staff-name">Hnamm</div>
+      <div class="staff-role">Helper</div>
+      <div class="staff-desc">
+        Hỗ trợ người chơi mới, giải đáp thắc mắc và giúp đỡ cộng đồng phát triển.
+      </div>
+      <div class="contact">
+        <a href="https://discord.gg/gdcBT5C3R3" target="_blank" title="Discord Hnamm" aria-label="Discord Hnamm">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.3698A19.7913 19.7913 0 0016.066 3c-.237 0-.467.012-.69.035a13.1832 13.1832 0 00-.622 1.301 18.3642 18.3642 0 00-5.497 0 13.1359 13.1359 0 00-.625-1.3 12.7355 12.7355 0 00-.69-.036 19.7798 19.7798 0 00-4.252 1.371C2.27 9.012 1.396 13.47 1.848 17.88a19.9543 19.9543 0 005.946 2.92 14.1952 14.1952 0 004.234-.015 14.0775 14.0775 0 004.214.015 19.9068 19.9068 0 005.948-2.92c.682-4.4-.48-8.849-3.883-13.595zm-11.8 8.32c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.154-2.419 1.2 0 2.17 1.086 2.153 2.419 0 1.333-.955 2.419-2.154 2.419zm7.588 0c-1.183 0-2.153-1.086-2.153-2.419 0-1.333.955-2.419 2.153-2.419 1.2 0 2.17 1.086 2.154 2.419 0 1.333-.954 2.419-2.154 2.419z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 CoalMine Server. All rights reserved.
+  </footer>
+</body>
+</html>
