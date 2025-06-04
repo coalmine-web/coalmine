@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoalMine Server - Thông Tin Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    /* Base */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #eee;
+    }
+    body {
+      background: linear-gradient(135deg, #0f001a, #2e004e, #1c002a);
+      background-size: 400% 400%;
+      animation: gradientShift 25s ease infinite;
+      min-height: 100vh;
+      padding: 80px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @keyframes gradientShift {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    nav {
+      width: 100%;
+      max-width: 1100px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: rgba(40, 0, 70, 0.85);
+      padding: 15px 30px;
+      border-radius: 30px;
+      box-shadow: 0 0 35px #cc00ff88;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ff33ff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 8px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 6px #ff33ffaa;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #00ffff;
+      background: #330066;
+      box-shadow: 0 0 25px #00ffffcc;
+      text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    }
+    nav a.active {
+      font-weight: 900;
+    }
+    main {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(30, 0, 50, 0.85);
+      padding: 40px 50px;
+      border-radius: 25px;
+      box-shadow: 0 0 50px #bb00ffaa;
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      text-shadow: 0 0 20px #00ffffbb;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      color: #ff33ff;
+      margin-bottom: 18px;
+      text-shadow: 0 0 12px #ff33ffbb;
+      border-bottom: 2px solid #ff33ff44;
+      padding-bottom: 6px;
+    }
+    .info-list {
+      list-style: none;
+      padding-left: 0;
+      font-weight: 600;
+    }
+    .info-list li {
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+    .info-list li span {
+      color: #ff77ff;
+      font-weight: 700;
+    }
+    /* Player count */
+    #player-count {
+      font-size: 1.5rem;
+      color: #00ffff;
+      font-weight: 700;
+      margin-top: 12px;
+      text-align: center;
+      text-shadow: 0 0 15px #00ffffbb;
+    }
+    /* Event list */
+    .event-list {
+      list-style: inside disc;
+      padding-left: 0;
+      color: #ddd;
+    }
+    /* Features */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 30px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #ff66ff;
+      text-shadow: 0 0 8px #ff66ffbb;
+    }
+    .features span {
+      background: #330066aa;
+      padding: 8px 15px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px #bb00ff88;
+      user-select: none;
+    }
+    @media(max-width: 600px){
+      main {
+        padding: 30px 20px;
+      }
+      .features {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Trang Chủ</a>
+    <a href="serverinfo.html" class="active">Thông Tin Server</a>
+    <a href="staff.html">Đội Ngũ Admin</a>
+    <a href="faq.html">FAQ & Hỗ Trợ</a>
+  </nav>
+
+  <main role="main" aria-label="Thông tin chi tiết server CoalMine">
+    <h1>Thông Tin Server</h1>
+
+    <section class="section" aria-labelledby="server-info-title">
+      <h2 id="server-info-title">Chi Tiết Server</h2>
+      <ul class="info-list">
+        <li><span>IP Server:</span> Coalmine.mcviet.top</li>
+        <li><span>Phiên bản Minecraft:</span> 1.20.4</li>
+        <li><span>Chế độ chơi:</span> Survival, PvP, Koth, Farm</li>
+      </ul>
+      <div id="player-count" aria-live="polite" aria-atomic="true">Đang tải số người chơi online...</div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <h2 id="features-title">Tính Năng Server</h2>
+      <div class="features" aria-label="Danh sách tính năng server">
+        <span>Đánh nhau</span>
+        <span></span>
+        <span>Chiếm đóng (Koth)</span>
+        <span></span>
+        <span>Sinh tồn</span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="events-title">
+      <h2 id="events-title">Lịch Sự Kiện Server</h2>
+      <ul class="event-list">
+        <li><strong>Thứ Bảy hàng tuần:</strong> Conningsoon...</li>
+        <li><strong>Ngày 15 hàng tháng:</strong> Conningsoon...</li>
+        <li><strong>Ngày lễ lớn:</strong> Conningsoon...</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    async function updatePlayerCount() {
+      try {
+        const res = await fetch('https://api.mcsrvstat.us/2/coalmine.mcviet.top');
+        const data = await res.json();
+        const countEl = document.getElementById('player-count');
+        if (data.online) {
+          countEl.textContent = `🟢 Người chơi online hiện tại: ${data.players.online} / ${data.players.max}`;
+        } else {
+          countEl.textContent = '🔴 Server hiện đang offline hoặc không thể lấy dữ liệu.';
+        }
+      } catch {
+        document.getElementById('player-count').textContent = '❌ Không thể lấy dữ liệu số người chơi.';
+      }
+    }
+    updatePlayerCount();
+    setInterval(updatePlayerCount, 30000);
+  </script>
+</body>
+</html>
